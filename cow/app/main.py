@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import Body, FastAPI, HTTPException, status
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -32,16 +32,22 @@ async def home():
 @app.get('/items/', response_model=list[Item])
 async def get_all_items(limit: int = 10) -> list[Item]:
     """Get all available items."""
-    return list(current_items.keys())[:limit]
+    items = list(current_items.values())
+
+    if limit:
+        return items[:limit]
+
+    return items
 
 
 @app.post('/items/', response_model=Item)
-async def add_item(item: Item):
+async def add_item(item: Item) -> Item:
     # TODO: This is subject to race-condition; needs to be protected.
-    if item in current_items:
+    if item.id in current_items:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=f"Item with id, {item.id} already exists.")
 
     current_items[item.id] = item
+    return item
 
 
 @app.put('/items/', status_code=status.HTTP_201_CREATED)
@@ -68,7 +74,7 @@ async def get_item(item_id: int) -> Item:
 
 
 @app.post('/items/{item_id}', response_model=Item)
-def update_item(item_id: int, name: str) -> Item:
+def update_item(item_id: int, name: str = Body(embed=True)) -> Item:
     try:
         item = current_items[item_id]
     except KeyError:
