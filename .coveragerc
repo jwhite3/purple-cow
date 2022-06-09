@@ -1,0 +1,16 @@
+[run]
+source = cow
+omit =
+    # Omit tests
+    ./tests/*
+    # Omit environment
+    ./venv/*
+    # Omit github stuff
+    ./.github/*
+    # Omit requirements
+    ./requirements/*
+    # Omit single files
+    ./.editorconfig
+    ./.gitignore
+    ./Dockerfile
+    ./README.md
