@@ -1,0 +1,8 @@
+version: "3.2"
+
+services:
+  web:
+    build: .
+    command: ["/opt/venv/bin/python", "-m", "uvicorn", "cow.app.main:app"]
+    ports:
+      - "${UVICORN_PORT:-3000}:${UVICORN_PORT:-3000}"

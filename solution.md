@@ -54,18 +54,18 @@ python3 -m uvicorn cow.app.main:app
 ## Build/Deploy
 From the repo directory:
 ```shell
-docker build -t purple-cow .  # Optionally, tag it with the -t flag
+docker-compose build
 ```
 
 Run the container:
 ```shell
-docker run -dp $UVICORN_PORT:$UVICORN_PORT purple-cow
+docker-compose up
 ```
 
 ## Automatic documentation:
 Once the application is running you can view the main API documentation by hitting the root, `localhost:3000/`.
-There are also more "traditional" open-api style docs available at `/docs` where you can also try out some of the
-endpoints from the UI.
+There are also more "traditional" open-api style docs available at `/docs` where you can also try out some endpoints 
+from the UI.
 
 ## Future work
 - Add an actual DB. The current in-memory solution is fine, but not persistent if the application goes down.
@@ -80,6 +80,7 @@ results if multiple users are adding/deleting content
 The static documents can then be hosted by the application.
 I added them to "/design-docs" here because "/docs" is already used by FastAPI, but this could be named anything really.
 - Add a build step to the GitHub Workflow
+- Make host configurable 
 
 
 ## Notes
