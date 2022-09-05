@@ -1,4 +1,4 @@
-aiofiles==0.8.0  # https://github.com/Tinche/aiofiles
+aiofiles==22.1.0  # https://github.com/Tinche/aiofiles
 aiohttp[speedups]==3.8.1  # https://github.com/aio-libs/aiohttp
 fastapi==0.78.0  # https://github.com/tiangolo/fastapi
 pydantic[dotenv]==1.9.1  # https://github.com/samuelcolvin/pydantic
