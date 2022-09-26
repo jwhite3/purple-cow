@@ -4,6 +4,6 @@ fastapi==0.78.0  # https://github.com/tiangolo/fastapi
 pydantic[dotenv]==1.9.1  # https://github.com/samuelcolvin/pydantic
 pytest==7.1.2  # https://github.com/pytest-dev/pytest
 pytest-cov==3.0.0  # https://github.com/pytest-dev/pytest-cov/
-sphinx==5.0.1  # https://github.com/sphinx-doc/sphinx
+sphinx==5.2.1  # https://github.com/sphinx-doc/sphinx
 sphinx-rtd-theme==1.0.0  # https://github.com/readthedocs/sphinx_rtd_theme
 uvicorn==0.17.6  # https://github.com/encode/uvicorn
