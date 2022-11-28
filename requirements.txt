@@ -1,6 +1,6 @@
 aiofiles==0.8.0  # https://github.com/Tinche/aiofiles
 aiohttp[speedups]==3.8.1  # https://github.com/aio-libs/aiohttp
-fastapi==0.78.0  # https://github.com/tiangolo/fastapi
+fastapi==0.88.0  # https://github.com/tiangolo/fastapi
 pydantic[dotenv]==1.9.1  # https://github.com/samuelcolvin/pydantic
 pytest==7.1.2  # https://github.com/pytest-dev/pytest
 pytest-cov==3.0.0  # https://github.com/pytest-dev/pytest-cov/
